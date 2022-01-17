@@ -2,9 +2,7 @@ package calculadora1;
 import java.util.Scanner;
 
 public class Calculadora1{
-    
-    
-    
+
     public static void main (String[] Args){
         boolean Salir = false;
         float Result=0;
