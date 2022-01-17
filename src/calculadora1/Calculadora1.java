@@ -17,6 +17,9 @@ public class Calculadora1{
         
             System.out.print("a)Sumar\nb)Restar\nc)Multiplicar\nd)Dividir\n> ");
             String Opcion = sc.next();
+            
+            boolean exit=false;
+            
             switch(Opcion){
                 case "a","A": 
                     op.Sumar(Dato1,Dato2);
@@ -36,8 +39,12 @@ public class Calculadora1{
                 }
             
             if (op.Continuar()==true){
+                exit=false;
             }
-        //}while(op.Salir()==false);
+            else {
+                exit=true;
+            }
+        //}while(exit==false);
         
     }
     
