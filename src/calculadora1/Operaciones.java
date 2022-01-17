@@ -33,23 +33,34 @@ public class Operaciones {
     }
     
     public boolean Continuar (){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("a)Añadir otro número\nb)Salir\n> ");
-        String opcion = sc.next();
         
+        boolean rtrn = false, salir=false;
         
-        boolean rtrn, salir=false;
-        switch(opcion){
-            case "a","A":
-                rtrn = false;
-                break;
-            case "b","B":
-                rtrn = true;
-                break;
-            default:
-                break;
-        }
+        do{
+            Scanner sc = new Scanner(System.in);
+            System.out.print("a)Añadir otro número\nb)Salir\n> ");
+            String opcion = sc.next();
+
+
+            
+
+
+            switch(opcion){
+                case "a","A":
+                    rtrn = false;
+                    salir=true;
+                    break;
+                case "b","B":
+                    rtrn = true;
+                    salir=true;
+                    break;
+                default:
+                    System.out.println("Escoja una opción váida e intente de nuevo");
+                    salir=false;
+                    break;
+            }
+        }while(salir==false);
         
-        return true;
+        return rtrn;
     }
 }
