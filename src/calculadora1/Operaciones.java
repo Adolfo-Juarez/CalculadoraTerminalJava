@@ -32,7 +32,6 @@ public class Operaciones {
     }
     
     public boolean Continuar (){
-        System.out.println("Yeah, it's work!");
         return true;
     }
 }

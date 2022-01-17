@@ -36,7 +36,6 @@ public class Calculadora1{
                 }
             
             if (op.Continuar()==true){
-                System.out.println ("Yeah, this also works!");
             }
         //}while(op.Salir()==false);
         
