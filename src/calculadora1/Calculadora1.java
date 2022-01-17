@@ -7,6 +7,7 @@ public class Calculadora1{
     
     public static void main (String[] Args){
         boolean Salir = false;
+        float Result=0;
         
         Scanner sc = new Scanner(System.in);
         System.out.print("¡Bienvenidos a la calculadora en Java! \nIngrese el primer número para empezar a calcular: ");
@@ -22,19 +23,19 @@ public class Calculadora1{
 
                 switch(Opcion){
                     case "a","A": 
-                        op.Sumar(Dato1,Dato2);
+                        Result=op.Sumar(Dato1,Dato2,Result);
                         Salir=true;
                     break;
                     case "b","B":
-                        op.Restar(Dato1,Dato2);
+                        Result=op.Restar(Dato1,Dato2,Result);
                         Salir=true;
                     break;
                     case "c","C":
-                        op.Multiplicar(Dato1, Dato2);
+                        Result=op.Multiplicar(Dato1,Dato2,Result);
                         Salir=true;
                     break;
                     case "d","D":
-                        op.Dividir(Dato1, Dato2);
+                        Result=op.Dividir(Dato1,Dato2,Result);
                         Salir=true;
                     break;
                     default:
@@ -47,7 +48,9 @@ public class Calculadora1{
             Salir = op.Continuar();
             
             if (Salir==true){
-                
+                System.out.print("Ingrese el siguiente número: ");
+                Dato2 = sc.nextFloat();
+                Dato1=Result;
             }
         }while(Salir==true);
         
