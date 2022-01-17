@@ -6,6 +6,8 @@ public class Calculadora1{
     
     
     public static void main (String[] Args){
+        boolean Salir = false;
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("¡Bienvenidos a la calculadora en Java! \nIngrese el primer número para empezar a calcular: ");
         float Dato1 = sc.nextFloat();
@@ -13,38 +15,41 @@ public class Calculadora1{
         float Dato2 = sc.nextFloat();
         Operaciones op = new Operaciones ();
         
-        //do{
-        
-            System.out.print("a)Sumar\nb)Restar\nc)Multiplicar\nd)Dividir\n> ");
-            String Opcion = sc.next();
+        do{
+            do{
+                System.out.print("a)Sumar\nb)Restar\nc)Multiplicar\nd)Dividir\n> ");
+                String Opcion = sc.next();
+
+                switch(Opcion){
+                    case "a","A": 
+                        op.Sumar(Dato1,Dato2);
+                        Salir=true;
+                    break;
+                    case "b","B":
+                        op.Restar(Dato1,Dato2);
+                        Salir=true;
+                    break;
+                    case "c","C":
+                        op.Multiplicar(Dato1, Dato2);
+                        Salir=true;
+                    break;
+                    case "d","D":
+                        op.Dividir(Dato1, Dato2);
+                        Salir=true;
+                    break;
+                    default:
+                        System.out.println("Elija una opción válida e intente de nuevo");
+                        Salir=false;
+                    break;
+                    }
+            }while(Salir==false);
             
-            boolean exit=false;
+            Salir = op.Continuar();
             
-            switch(Opcion){
-                case "a","A": 
-                    op.Sumar(Dato1,Dato2);
-                break;
-                case "b","B":
-                    op.Restar(Dato1,Dato2);
-                break;
-                case "c","C":
-                    op.Multiplicar(Dato1, Dato2);
-                break;
-                case "d","D":
-                    op.Dividir(Dato1, Dato2);
-                break;
-                default:
-                    System.out.println("Elija una opción válida e intente de nuevo");
-                break;
-                }
-            
-            if (op.Continuar()==true){
-                exit=false;
+            if (Salir==true){
+                
             }
-            else {
-                exit=true;
-            }
-        //}while(exit==false);
+        }while(Salir==true);
         
     }
     

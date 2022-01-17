@@ -38,7 +38,7 @@ public class Operaciones {
         
         do{
             Scanner sc = new Scanner(System.in);
-            System.out.print("a)Añadir otro número\nb)Salir\n> ");
+            System.out.print("a)Añadir otro número\nb)Mostrar resultado\nc)Salir\n> ");
             String opcion = sc.next();
 
 
@@ -47,11 +47,15 @@ public class Operaciones {
 
             switch(opcion){
                 case "a","A":
-                    rtrn = false;
+                    rtrn = true;
                     salir=true;
                     break;
                 case "b","B":
-                    rtrn = true;
+                    rtrn = false;
+                    salir=true;
+                    break;
+                case "c","C":
+                    rtrn = false;
                     salir=true;
                     break;
                 default:
